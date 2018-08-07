@@ -97,12 +97,19 @@ class App:
         # pyxel.text(80, 60, "Hallo Anna", 1)
 
     def check_input(self):
-        if pyxel.btnr(pyxel.KEY_RIGHT):
+        if pyxel.btnr(pyxel.KEY_SPACE):
+            self.check_collision()
+
+    def check_collision(self):
+        enext = self.elevators.get(self.idx + 1)
+        if (
+            # Add some paddding for easier gameplay
+            self.cat.y + 20 >= enext.y
+            and self.cat.y + self.cat.height <= enext.y + enext.size
+        ):
             self.idx += 1
-        if pyxel.btnr(pyxel.KEY_LEFT):
-            self.idx -= 1
-        # if pyxel.btn(pyxel.KEY_SPACE):
-        #     self.y = (self.y + 10) % self.height
+        else:
+            self.idx = 0
 
 
 App()
