@@ -39,9 +39,11 @@ class Elevators:
     def _create_elevators(self):
         width = int(self.width / self.num)
         elevators = []
+        direction = 1
         for i in range(0, self.width):
-            speed = random.choice([-2, -1, 1, 2])
-            elevators.append(Elevator(i, 20, speed, 0, self.width))
+            speed = random.uniform(1.0, 2.0)
+            elevators.append(Elevator(i, 20, direction * speed, 0, self.width))
+            direction = -direction
         return elevators
 
     def get(self, idx):
