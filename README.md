@@ -2,4 +2,4 @@
 
 Safely guide the cat from one elevator to another.
 
-![Screenshot](screenshot.png)
+![Live game action](game.gif)
