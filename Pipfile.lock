@@ -146,11 +146,11 @@
         },
         "pyxel": {
             "hashes": [
-                "sha256:238e207b5cf84d7f20e0d62336399132bbaf490b5fadad41e8a12d0f60758273",
-                "sha256:bfce33830841313636921a697f9796a43f32265d05f7de5da98a9499532f9b44"
+                "sha256:3eccd6d8a70e13c336b3d4350b71939026631db3bf3cff4605a0365b9b866dcd",
+                "sha256:9c21f06d1be9d4a06d8a18ec696975a3f03640760bdd9bc0463d951137ee7067"
             ],
             "index": "pypi",
-            "version": "==0.7.7"
+            "version": "==0.7.8"
         },
         "sounddevice": {
             "hashes": [
