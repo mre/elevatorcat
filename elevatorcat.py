@@ -80,6 +80,7 @@ class App:
         self.idx = 0
         self.elevators = Elevators(self.num_elevators, self.width, self.height)
         self.cat = Cat(0, 0)
+        self.score_text = "Score {:05d}"
         pyxel.init(self.width, self.height)
         pyxel.image(0).load(0, 0, "assets/cat_16x16.png")
         pyxel.run(self.update, self.draw)
@@ -87,14 +88,15 @@ class App:
     def update(self):
         self.check_input()
         self.cat.center(self.elevators.get(self.idx).pos())
-        # self.cat.update()
         self.elevators.update()
 
     def draw(self):
         pyxel.cls(0)
         self.elevators.draw(self.idx)
         self.cat.draw()
-        # pyxel.text(80, 60, "Hallo Anna", 1)
+        score = self.score_text.format(self.idx)
+        scorelen = len(score) * 4
+        pyxel.text(self.width - scorelen, 0, score, 10)
 
     def check_input(self):
         if pyxel.btnr(pyxel.KEY_SPACE):
