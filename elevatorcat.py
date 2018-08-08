@@ -76,13 +76,21 @@ class App:
     def __init__(self):
         self.width = 160
         self.height = 120
+        pyxel.init(self.width, self.height)
+
         self.num_elevators = 5
         self.idx = 0
         self.elevators = Elevators(self.num_elevators, self.width, self.height)
         self.cat = Cat(0, 0)
         self.score_text = "Score {:05d}"
-        pyxel.init(self.width, self.height)
+
+        pyxel.sound(3).set("g1a#1d#2b2", "s", "7654", "s", 9)
+        pyxel.sound(4).set("g1c2f2a2c#2f#3", "p", "6", "s", 4)
+        pyxel.sound(5).set("a3d#3a#2f#2d2b1g1d#1", "s", "77654321", "s", 10)
+
         pyxel.image(0).load(0, 0, "assets/cat_16x16.png")
+
+        self.play_bgm()
         pyxel.run(self.update, self.draw)
 
     def update(self):
@@ -102,6 +110,23 @@ class App:
         if pyxel.btnr(pyxel.KEY_SPACE):
             self.check_collision()
 
+    def play_bgm(self):
+        # bgm
+        a = "c3e2g2c3 e2g2c3e2"
+        b = "c3d2g2c3 d2g2c3d2"
+        pyxel.sound(0).set(a * 3 + b * 1, "t", "2", "f", 30)
+
+        a = "g1c2d2e2 e2e2f2f2"
+        b = "e2e2e2c2 c2c2c2c2"
+        c = "g2g2g2d2 d2d2d2d2"
+        pyxel.sound(1).set(a + b + a + c, "s", "4", "nnnn vvnn vvff nvvf", 30)
+
+        pyxel.sound(2).set("c1c1f0f0a0a0g0g0", "p", "4", "nf", 120)
+
+        pyxel.play(0, 0, loop=True)
+        pyxel.play(1, 1, loop=True)
+        pyxel.play(2, 2, loop=True)
+
     def check_collision(self):
         enext = self.elevators.get(self.idx + 1)
         if (
@@ -109,8 +134,10 @@ class App:
             self.cat.y + 20 >= enext.y
             and self.cat.y + self.cat.height <= enext.y + enext.size
         ):
+            pyxel.play(3, 4)
             self.idx += 1
         else:
+            pyxel.play(3, 5)
             self.idx = 0
 
 
