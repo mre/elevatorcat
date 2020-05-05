@@ -31,11 +31,11 @@
         },
         "pyxel": {
             "hashes": [
-                "sha256:a495c8f01e1da85a07eca1831a1c203fa67027ace4fe2cb25706d19b88cfcb36",
-                "sha256:ed6119cc9deb672a3998028d0a2d5c17f61bbb44129a81bbff67a7817568077a"
+                "sha256:2770f27be21b78d9f67fec0a779ebc9035cd40720ded422ae1119e7c798a1b80",
+                "sha256:49bdb1ed886c32dd986bdccdfdd8b119696f22d01a4e6acfd4a8ed97ecc4fd80"
             ],
             "index": "pypi",
-            "version": "==1.3.2"
+            "version": "==1.3.6"
         }
     },
     "develop": {
@@ -70,10 +70,10 @@
         },
         "click": {
             "hashes": [
-                "sha256:8a18b4ea89d8820c5d0c7da8a64b2c324b4dabb695804dbfea19b9be9d88c0cc",
-                "sha256:e345d143d80bf5ee7534056164e5e112ea5e22716bbb1ce727941f4c8b471b9a"
+                "sha256:d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a",
+                "sha256:dacca89f4bfadd5de3d7489b7c8a566eee0d3676333fbb50030263894c38c0dc"
             ],
-            "version": "==7.1.1"
+            "version": "==7.1.2"
         },
         "isort": {
             "hashes": [
